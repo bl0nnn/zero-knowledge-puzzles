@@ -13,7 +13,23 @@ template QuadraticEquation() {
     signal input res;   // Expected result of the equation
     signal output out;  // If res is correct , then return 1 , else 0 . 
 
-    // your code here
+    signal xsqr;
+    signal firstmul;
+    signal secondmul;
+
+    
+    xsqr <== x * x;
+    firstmul <== xsqr * a;
+    secondmul <== b * x;
+    
+    signal calcres;
+    calcres <== firstmul + secondmul + c;
+
+    component ieq = IsEqual();
+    ieq.in[0] <== res;
+    ieq.in[1] <== calcres;
+
+    out <== ieq.out;
 }
 
 component main  = QuadraticEquation();
