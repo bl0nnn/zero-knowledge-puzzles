@@ -16,6 +16,22 @@ template IntDiv(n) {
     signal input quotient;
     signal input remainder;
 
+    component isz = IsZero();
+    isz.in <== denominator;
+    isz.out === 0;
+
+    component geq = GreaterEqThan(n);
+    geq.in[0] <== remainder;
+    geq.in[1] <== 0;
+    geq.out === 1;
+
+    component lt = LessThan(n);
+    lt.in[0] <== remainder;
+    lt.in[1] <== denominator;
+    lt.out === 1;
+
+    numerator === quotient * denominator + remainder;
+
 }
 
 component main = IntDiv(252);

@@ -11,17 +11,51 @@ include "../node_modules/circomlib/circuits/comparators.circom";
 
 
 function intSqrtFloor(x) {
-    // compute the floor of the
-    // integer square root
+    if (x < 2){
+        return x;
+    }
+
+    var guess = x \ 2;
+    var next_guess = 0;
+
+    var i = 0;
+    while(i < 127) {
+        next_guess = (guess+x\guess)\2;
+        if (next_guess >= guess){
+            return guess;
+        }
+        guess = next_guess;
+        i++; 
+    }
+    return guess;
 }
 
 template IntSqrtOut(n) {
     signal input in;
     signal output out;
 
-    out <-- intSqrtFloor(x);
-    // constrain out using your
-    // work from IntSqrt
+    component inBits = Num2Bits(126);   //max 126 cause then we will do ^2
+    inBits.in <== in;
+
+    out <-- intSqrtFloor(in);
+    
+    signal outSqr;
+    signal nextOut;
+    signal nextOutSqr;
+
+    outSqr <== out * out;
+    nextOut <== out + 1;
+    nextOutSqr <== nextOut * nextOut;
+
+    component geq1 = GreaterEqThan(252);
+    geq1.in[0] <== in;
+    geq1.in[1] <== outSqr;
+    geq1.out === 1;
+
+    component leq1 = LessThan(252);
+    leq1.in[0] <== in;
+    leq1.in[1] <== nextOutSqr;
+    leq1.out === 1;
 }
 
 component main = IntSqrtOut(252);
