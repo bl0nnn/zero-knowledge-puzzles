@@ -1,0 +1,8 @@
+1,1,0,main.c
+2,2,0,main.a[0]
+3,3,0,main.a[1]
+4,4,0,main.sum
+5,-1,0,main.s[0]
+6,5,0,main.s[1]
+7,6,0,main.s[2]
+8,-1,0,main.s[3]

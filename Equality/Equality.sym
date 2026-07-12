@@ -1,0 +1,16 @@
+1,1,2,main.c
+2,2,2,main.a[0]
+3,3,2,main.a[1]
+4,4,2,main.a[2]
+5,5,1,main.Eq1.out
+6,-1,1,main.Eq1.in[0]
+7,-1,1,main.Eq1.in[1]
+8,-1,0,main.Eq1.isz.out
+9,6,0,main.Eq1.isz.in
+10,7,0,main.Eq1.isz.inv
+11,8,1,main.Eq2.out
+12,-1,1,main.Eq2.in[0]
+13,-1,1,main.Eq2.in[1]
+14,-1,0,main.Eq2.isz.out
+15,9,0,main.Eq2.isz.in
+16,10,0,main.Eq2.isz.inv
