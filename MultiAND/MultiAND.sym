@@ -1,0 +1,9 @@
+1,1,0,main.out
+2,2,0,main.in[0]
+3,3,0,main.in[1]
+4,4,0,main.in[2]
+5,5,0,main.in[3]
+6,-1,0,main.intermediate_out[0]
+7,6,0,main.intermediate_out[1]
+8,7,0,main.intermediate_out[2]
+9,-1,0,main.intermediate_out[3]

@@ -1,0 +1,12 @@
+1,1,1,main.out
+2,2,1,main.in[0]
+3,3,1,main.in[1]
+4,4,1,main.in[2]
+5,5,1,main.in[3]
+6,-1,1,main.sum[0]
+7,6,1,main.sum[1]
+8,7,1,main.sum[2]
+9,8,1,main.sum[3]
+10,9,0,main.isz.out
+11,-1,0,main.isz.in
+12,10,0,main.isz.inv
